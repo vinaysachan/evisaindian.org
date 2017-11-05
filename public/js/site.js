@@ -96,11 +96,16 @@ $(document).ready(function () {
     });
     $('input:radio[name=military]').change(function () {
         if (this.value == 'yes') {
-
             $('#military_form').show();
         } else if (this.value == 'no') {
 
             $('#military_form').hide();
+        }
+    });
+    $('#visaType').change(function() {
+        $('.selected_app_type').text('');
+        if($('#visaType').val() != '') {
+            $('.selected_app_type').text($('#visaType option:selected').text());
         }
     });
 });

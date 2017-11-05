@@ -179,7 +179,7 @@ class Main extends FRONT_Controller {
             'getCounrty' => $this->setting_model->get_country_cache(['where'=> ['status' => STATUS_ACTIVE]]),
             'getAllCounrty'     => $this->setting_model->get_country_cache(),
         ];
-        $this->load->view('templates/front.tpl', array_merge($this->data, $data));
+        $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
     
     function visa_step3() {
@@ -206,7 +206,7 @@ class Main extends FRONT_Controller {
                 'getAllCounrty'             =>  $this->setting_model->get_country_cache(),
                 'apply_details'             =>  $this->operation_model->get_application_details()
             ];
-            $this->load->view('templates/front.tpl', array_merge($this->data, $data));
+            $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
         } else {
             redirect(base_url('apply_visa'));
         }
@@ -247,7 +247,7 @@ class Main extends FRONT_Controller {
             'ports'                     =>  $this->setting_model->get_arrival_port_cache(['where'=> ['status' => STATUS_ACTIVE]]),
             'application_type'          =>  $this->setting_model->get_application_type_cache(['where' => ['status' => STATUS_ACTIVE]])
         ];
-        $this->load->view('templates/front.tpl', array_merge($this->data, $data));
+        $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
     
     public function uploadPassport() {
@@ -282,7 +282,7 @@ class Main extends FRONT_Controller {
             'heading'                   =>  'e-Tourist Visa (eTV) Application',
             'apply_details'             =>  $this->operation_model->get_application_details()
         ];
-        $this->load->view('templates/front.tpl', array_merge($this->data, $data));
+        $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
     
     
@@ -297,7 +297,7 @@ class Main extends FRONT_Controller {
             'heading' => 'Conform Details',
             'apply_details' => $this->operation_model->get_application_details()
         ];
-        $this->load->view('templates/front.tpl', array_merge($this->data, $data));
+        $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
     
     
@@ -312,7 +312,7 @@ class Main extends FRONT_Controller {
             'heading' => 'e-Tourist Visa (eTV) Application',
             'apply_details' => $this->operation_model->get_application_details()
         ];
-        $this->load->view('templates/front.tpl', array_merge($this->data, $data));
+        $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
     
     
@@ -327,7 +327,7 @@ class Main extends FRONT_Controller {
             'heading' => 'e-Tourist Visa (eTV) Application',
             'apply_details' => $this->operation_model->get_application_details()
         ];
-        $this->load->view('templates/front.tpl', array_merge($this->data, $data));
+        $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
     
      function payment_success() {
@@ -342,7 +342,7 @@ class Main extends FRONT_Controller {
             'heading' => 'e-Tourist Visa (eTV) Application',
             'apply_details' => $this->operation_model->get_application_details()
         ];
-        $this->load->view('templates/front.tpl', array_merge($this->data, $data));
+        $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
 
     function payment_faild() {

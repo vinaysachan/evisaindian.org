@@ -10,7 +10,7 @@
             <section>
                 <div class="container">
                     <div class="row">
-                        <div class="<?= (!empty($right_bar)) ? 'col-lg-9' : 'col-lg-12' ?> mx-auto bg-white page_content">
+                        <div class="col-lg-12 mx-auto bg-white page_content">
                             <?php if (empty($banners)) : ?>
                                 <div class="banner_top">
                                     <img src="<?= base_url('public/img/mumbai.jpg') ?>">
@@ -18,13 +18,16 @@
                             <?php endif; ?>
                             <h1><?= (!empty($heading)) ? $heading : '' ?></h1>
                             <?= $this->util->show_flash_message() ?>
-                            <?php (!empty($view)) ? $this->load->view($view) : $this->load->view($this->router->fetch_class() . '/' . $this->router->fetch_method() . '_view'); ?>
+                            <?php (!empty($view)) ? $this->load->view($view) : $this->load->view($this->router->fetch_class() . '/' . $this->router->fetch_method() . '_view'); ?> 
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-1"> </div>
+                                    <div class="col-sm-10">
+                                        <h1><?= (!empty($heading)) ? $heading : '' ?></h1>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <?php
-                        if (!empty($right_bar)) :
-                            $this->load->view('includes/right_bar');
-                        endif;
-                        ?>
                     </div>
                 </div>
             </section>

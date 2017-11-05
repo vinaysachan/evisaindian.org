@@ -1,17 +1,26 @@
 <div class="p10">
     <form name="applyVisaFrm" id="applyVisaFrm" method="post" class="form-horizontal" action="<?= base_url('apply_visa') ?>" >
-        <div class="form-group row">
-            <label for="visaType" class="col-sm-6 require">Application Type </label>
-            <div class="col-sm-3">
-                <select name="visaType" id="visaType" required="" label-name="Application Type" class="form-control">
-                    <option value="">Select</option>
-                    <?php if (!empty($application_type)) : foreach ($application_type as $a) : ?>
-                            <option value="<?= $a->type ?>"><?= $a->name ?></option>
-                            <?php
-                        endforeach;
-                    endif;
-                    ?>
-                </select>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" style="background-color: antiquewhite; padding-top: 10px; padding-bottom: 10px; margin-bottom: 5px;">
+                    <div class="form-group row">
+                        <label for="visaType" class="col-sm-6 require">Application Type </label>
+                        <div class="col-sm-4">
+                            <select name="visaType" id="visaType" required="" label-name="Application Type" class="form-control">
+                                <option value="">Select</option>
+                                <?php if (!empty($application_type)) : foreach ($application_type as $a) : ?>
+                                        <option value="<?= $a->type ?>"><?= $a->name ?></option>
+                                        <?php
+                                    endforeach;
+                                endif;
+                                ?>
+                            </select>
+                            <br/>
+                            <div class="selected_app_type"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group row">
@@ -103,16 +112,18 @@
         <div class="form-group row">
             <label for="v_code" class="col-sm-6 col-form-label">Access Code</label>
             <div class="col-sm-3">
-                <input required="" name="v_code" id="v_code" minlength="4" type="text" maxlength="4" class="form-control" label-name="Please enter Verification Code" placeholder="Please enter Verification Code"><br/>
-                <span class="captcha"></span>
-                <a href="javascript:void(0)" class="captcha_new"><i class="fa fa-refresh mr10"></i>Not readable? Change text.</a>
+                <span class="captcha"></span><br/>
+                <input required="" name="v_code" id="v_code" minlength="4" type="text" maxlength="4" class="form-control" label-name="Please enter Verification Code" placeholder="Please enter Verification Code">
+                <p class="fs12">Can't read the image? click <a href="javascript:void(0)" class="captcha_new"> here </a> to refresh.</p>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-6"></div>
             <div class="col-sm-6">
-                <button type="submit" class="btn btn-primary" name="step1" value="Continue">Continue</button>
+                <button type="submit" class="btn btn-danger" name="step1" value="Continue">Continue</button>
             </div>
         </div>
     </form>
 </div>
+
+
