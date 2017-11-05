@@ -199,6 +199,61 @@ label.error, span.error, div.error {
 }
 .require:after { content:  '*'; color: #990000; display: inline-block; } 
 
+.right-box:first-child{
+    margin-top: 10px;
+}
+
+.right-box {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    margin-left: 0;
+    margin-top: 30px; 
+    position: relative;
+}
+
+.right-box h3 {
+    border-bottom: 1px solid #f0f0f0;
+    color: #fff;
+    font-family: "Roboto Slab",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 28px;
+    margin: 0;
+    padding: 10px 0; 
+    text-align: center;
+    text-transform: uppercase;
+    background-color: blueviolet;
+}
+.right-box-content {
+    padding: 10px;
+}
+
+ul.blog-popular-post {
+    list-style: outside none none;
+    padding: 5px 5px 0 5px;
+}
+ul.blog-popular-post li {
+    border-bottom: 1px solid #ececec;
+    list-style: outside none none;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+ul.blog-popular-post li:last-child{
+    border-bottom: 0px solid #ececec;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+}
+ul.blog-popular-post li a {
+    color: #222222;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out 0s;
+    font-family: "Roboto Condensed",sans-serif;
+}
+ul.blog-popular-post li a:hover{
+    color: #0000ff;
+}
 
 .bg-yellow {
     background-color: #f39c12 !important;
