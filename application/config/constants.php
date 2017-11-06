@@ -128,7 +128,7 @@ define('ADMIN_EMAIL1', 'vnyscn@gmail.com');
 define('ADMIN_EMAIL2', 'vinaysachan@live.in');
 
 
-define('CONTACT_EMAIL1', 'contact@e-touristvisa.com');
-define('CONTACT_NO1', '+91 8802085751');
-
- 
+define('CONTACT_EMAIL1', 'contact@e-touristindiavisa.org');
+define('CONTACT_EMAIL2', 'info@e-touristindiavisa.org');
+define('CONTACT_NO1', '+91 8527661900');
+define('CONTACT_NO_UK', '08000015744');
