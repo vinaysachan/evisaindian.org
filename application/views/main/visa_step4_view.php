@@ -2,7 +2,7 @@
     <h4>Application NO : <?= strtoupper($this->session->userdata('application_id')); ?></h4>
 </div>
 <div class="p10">
-    <form method="post" class="form-horizontal" action="" name="step4Form" id="step4Form" enctype="multipart/form-data">
+    <form method="post" class="form-horizontal" action="<?=  base_url('visa_step4')?>" name="step4Form" id="step4Form" enctype="multipart/form-data">
         <div class="col-md-12 box_heading">Details of Visa Sought </div>
         <div class="form-group row">
             <label for="visaType" class="col-sm-4 require">Type of visa*</label>
@@ -229,21 +229,25 @@
         </div>
         <div class="col-md-12 box_heading">Image Upload</div>
         <div class="form-group row">
-            <label for="" class="col-sm-4 require">Image</label>
+            <label for="" class="col-sm-4 require">
+                Image <br/>
+                <img src="<?=  base_url('public/img/photo_required.png')?>" height="200">
+            </label>
             <div class="col-sm-7">
                 <?php if (!empty($apply_details[0]->image)) : ?>
                     <input type="hidden" name="old_img" value="<?= $apply_details[0]->image ?>">
-                    <input type="file" accept="image/.jpe,.jpg,.jpeg,.png" class="form-control view_photo" id="file" name="image" >
+                    <input type="file" accept="image/.jpe,.jpg,.jpeg,.png" class="form-control view_photo" id="image" name="image">
                     <div class="show_images mt5">
-                        <img style="max-width: 150px" src="<?= base_url(APPLICATION_IMG . $apply_details[0]->image) ?>">
+                        <img style="max-width: 250px" src="<?= base_url(APPLICATION_IMG . $apply_details[0]->image) ?>">
                     </div>
                 <?php else : ?>
-                    <input type="file" accept="image/.jpe,.jpg,.jpeg,.png" required="" class="form-control view_photo" id="file" name="image" >
+                    <input type="file" accept="image/.jpe,.jpg,.jpeg,.png" required="" class="form-control view_photo" id="image" name="image" >
                 <?php endif; ?>
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-offset-4 col-sm-4">
+            <div class="col-sm-4"> </div>
+            <div class="col-sm-4">
                 <input type="submit" class="btn btn-primary" name="step4" value="Continue" />
             </div>
         </div>

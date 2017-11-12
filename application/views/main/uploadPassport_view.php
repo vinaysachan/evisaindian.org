@@ -7,11 +7,11 @@
     </div>
 </div>
 <div class="p10">
-    <form name="passport_uploadFrm" id="passport_uploadFrm" method="post" class="form-horizontal" action="" enctype="multipart/form-data"> 
-
+    <form name="passport_uploadFrm" id="passport_uploadFrm" method="post" class="form-horizontal" action="<?=  base_url('uploadPassport')?>" enctype="multipart/form-data"> 
+        <p class="text-blue" style="color: #0066CC;font-size: 13px;text-align: center;">Upload A Scanned Copy Of Your Original Coloured Passport Or Take A Picture Of Your Passport and Uploaded.</p>
         <div class="form-group row">
-            <label for="" class="col-sm-4 require">Passport Image</label>
-            <div class="col-sm-7">
+            <label for="" class="col-sm-2 require">Passport Image</label>
+            <div class="col-sm-5">
                 <?php if (!empty($apply_details[0]->passport_img)) : ?>
                     <input type="hidden" name="old_passport" value="<?= $apply_details[0]->passport_img ?>">
                     <input type="file" accept="image/.jpe,.jpg,.jpeg,.png" class="form-control view_photo" id="passport" name="passport" >
@@ -22,9 +22,13 @@
                     <input type="file" required="" data-label="passport" accept="image/.jpe,.jpg,.jpeg,.png" class="form-control view_photo" id="passport" name="passport" >
                 <?php endif; ?>
             </div>
+            <div class="col-sm-5">
+                <h4>Sample Passport Image :- </h4>
+                <img src="<?=  base_url('public/img/sample_passport.jpg')?>" width="300">
+            </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-offset-4 col-sm-3">
+            <div class="col-sm-4"></div><div class="col-sm-3">
                 <button type="submit" name="uploadpassport" class="btn btn-primary" value="Save and Continue">Save and Continue</button>
             </div>
         </div>
@@ -32,7 +36,7 @@
     <div class="p10">
         <p>Kindly ensure that the document is as per specifications mentioned below.</p>
         <span class="red_heading text_bold" style="margin-left:24px">Document Specifications</span>
-        <ul class="instructions_ul text_bold">
+        <ol class="instructions_ul text_bold">
             <li>
                 - Passport Upload- Photo page of Passport containing personal details like name,date of birth, nationality , expiry date etc. to be uploaded by the applicant. 
             </li> 
@@ -42,6 +46,6 @@
             <li> 
                 - The application is liable to be rejected if the uploaded document is not clear and as per specification. 
             </li>
-        </ul>
+        </ol>
     </div>
 </div>

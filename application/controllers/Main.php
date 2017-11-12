@@ -216,36 +216,45 @@ class Main extends FRONT_Controller {
     }
     
     public function visa_step4() {
-         if (empty($this->session->userdata('application_id'))) {
+        if (empty($this->session->userdata('application_id'))) {
             redirect(base_url('apply_visa'));
         }
         if (!$this->input->post('step4') == "") {
-            $app_id = $this->session->userdata('application_id');
-            $img = $this->util->fileUpload(APPLICATION_IMG, 'image', $app_id, 'jpeg|jpg|png');
-
-            $old_img = $this->input->post('old_img');
-            if (empty($img)) {
-                $img = $old_img;
-            } else {
-                $old_img_path = APPLICATION_IMG . $old_img;
-                if (file_exists($old_img_path)) {
-                    @unlink($old_img_path);
+            $return                 =   [];
+            $app_id                 =   $this->session->userdata('application_id');
+            $img                    =   $this->util->fileUpload(APPLICATION_IMG, 'image', $app_id, 'jpeg|jpg|png');
+            if (!empty($img['error']) && ($_FILES['image']['size'] != 0)) {
+                $return             =   ['sts' => STATUS_ERROR, 'msg' => $img['error']];
+                unset($img);
+            }
+            if(empty($img['error'])) {
+                $old_img            =   $this->input->post('old_img');
+                if (empty($img)) {
+                    $img            =   $old_img;
+                } else {
+                    $old_img_path   =   APPLICATION_IMG . $old_img;
+                    if (file_exists($old_img_path)) {
+                        @unlink($old_img_path);
+                    }
+                }
+                $result             =   $this->operation_model->app_step4($img);
+                if ($result) {
+                    $return         =   ['sts' => STATUS_SUCCESS, 'url' => base_url('main/uploadPassport')];
+                } else {
+                    $return         =   ['sts' => STATUS_ERROR, 'msg' => 'Unable to complete step4. Please contact our support team.'];
                 }
             }
-            $result = $this->operation_model->app_step4($img);
-            if ($result) {
-                redirect(base_url('main/uploadPassport'));
-            }
+            echo json_encode($return);
+            exit();
         }
         $data = [
-            'title' => 'Apply Online For Indian VISA',
-//            'meta_description' => $this->meta_description,
-//            'meta_keywords' => $this->meta_keywords,
-            
+            'title'                     =>  'Apply Online For Indian VISA',
+//            'meta_description'        =>  $this->meta_description,
+//            'meta_keywords'           =>  $this->meta_keywords,
             'show_application_link'     =>  FALSE,
             'right_bar'                 =>  FALSE,
-            'heading' => 'e-Tourist Visa (eTV) Application',
-            'apply_details' => $this->operation_model->get_application_details(),
+            'heading'                   =>  'e-Tourist Visa (eTV) Application',
+            'apply_details'             =>  $this->operation_model->get_application_details(),
             'getCounrty'                =>  $this->setting_model->get_country_cache(),
             'ports'                     =>  $this->setting_model->get_arrival_port_cache(['where'=> ['status' => STATUS_ACTIVE]]),
             'application_type'          =>  $this->setting_model->get_application_type_cache(['where' => ['status' => STATUS_ACTIVE]]),
@@ -259,28 +268,37 @@ class Main extends FRONT_Controller {
             redirect(base_url('apply_visa'));
         }
         if (!$this->input->post('uploadpassport') == "") {
-            $app_id = $this->session->userdata('application_id');
-            $img = $this->util->fileUpload(PASSPORT_IMG, 'passport', $app_id, 'jpeg|jpg|png');
-
-            $old_img = $this->input->post('old_passport');
+            $return                 =   [];
+            $app_id                 =   $this->session->userdata('application_id');
+            $img                    =   $this->util->fileUpload(PASSPORT_IMG, 'passport', $app_id, 'jpeg|jpg|png');
+            
+            if (!empty($img['error']) && ($_FILES['passport']['size'] != 0)) {
+                $return             =   ['sts' => STATUS_ERROR, 'msg' => $img['error']];
+                unset($img);
+            }
+            
+            $old_img                =   $this->input->post('old_passport');
             if (empty($img)) {
-                $img = $old_img;
+                $img                =   $old_img;
             } else {
-                $old_img_path = PASSPORT_IMG . $old_img;
+                $old_img_path       =   PASSPORT_IMG . $old_img;
                 if (file_exists($old_img_path)) {
                     @unlink($old_img_path);
                 }
             }
-
-            $result = $this->operation_model->uploadpassport($img);
+            $result                 =   $this->operation_model->uploadpassport($img);
             if ($result) {
-                redirect(base_url('main/reviewform'));
+                $return             =   ['sts' => STATUS_SUCCESS, 'url' => base_url('main/reviewform')];
+            } else {
+                $return             =   ['sts' => STATUS_ERROR, 'msg' => 'Unable to upload passport. Please contact our support team.'];
             }
+            echo json_encode($return);
+            exit();
         }
         $data = [
             'title'                     =>  'Apply Online For Indian VISA',
-//            'meta_description' => $this->meta_description,
-//            'meta_keywords' => $this->meta_keywords,
+//            'meta_description'          =>  $this->meta_description,
+//            'meta_keywords'             =>  $this->meta_keywords,
             'show_application_link'     =>  FALSE,
             'right_bar'                 =>  FALSE,
             'heading'                   =>  'e-Tourist Visa (eTV) Application',

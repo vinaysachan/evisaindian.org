@@ -102,9 +102,9 @@ $(document).ready(function () {
             $('#military_form').hide();
         }
     });
-    $('#visaType').change(function() {
+    $('#visaType').change(function () {
         $('.selected_app_type').text('');
-        if($('#visaType').val() != '') {
+        if ($('#visaType').val() != '') {
             $('.selected_app_type').text($('#visaType option:selected').text());
         }
     });
@@ -200,14 +200,67 @@ $("#step3").validate({
     }
 });
 $("#step4Form").validate({
+    rules: {
+        image: {sizeCheck: "2"}
+    },
+    messages: {
+        image: {accept: "Only JPG/PNG Allowed", sizeCheck: "Image Size must be less than 2 MB"}
+    },
     submitHandler: function (form) {
-        return true;
+        var btn = $('#step4Form button[name="step4"]').loading('set');
+        $.ajax({
+            url: $(form).attr('data-url'),
+            dataType: "json",
+            type: "POST",
+            data: new FormData($('#step4Form')[0]),
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (d) {
+                if (d.sts == 'success') {
+                    window.location.href = d.url;
+                } else if (d.sts == 'error') {
+                    $.alert({title: 'Sorry!', content: d.msg});
+                }
+            }
+        }).always(function () {
+            btn.loading('reset');
+        });
+        return false;
     }
 });
 $("#passport_uploadFrm").validate({
+    rules: {
+        passport: {sizeCheck: "2"}
+    },
+    messages: {
+        passport: {accept: "Only JPG/PNG Allowed", sizeCheck: "Image Size must be less than 2 MB"}
+    },
     submitHandler: function (form) {
-        return true;
+        var btn = $('#passport_uploadFrm button[name="step4"]').loading('set');
+        $.ajax({
+            url: $(form).attr('data-url'),
+            dataType: "json",
+            type: "POST",
+            data: new FormData($('#passport_uploadFrm')[0]),
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (d) {
+                if (d.sts == 'success') {
+                    window.location.href = d.url;
+                } else if (d.sts == 'error') {
+                    $.alert({title: 'Sorry!', content: d.msg});
+                }
+            }
+        }).always(function () {
+            btn.loading('reset');
+        });
+        return false;
     }
+//    submitHandler: function (form) {
+//        return true;
+//    }
 });
 function acquire_naturalization(val) {
     if (val == 'Naturalization') {

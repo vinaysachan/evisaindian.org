@@ -387,10 +387,12 @@
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-offset-2 col-sm-3">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3">
                 <input type="submit" class="btn btn-primary" name="visa_step3" value="Save and Continue" />
             </div>
-            <div class="col-sm-offset-2 col-sm-3">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3">
                 <input type="submit" class="btn btn-primary" name="visa_step3_exit" value="Save and Temporarily Exit" />
             </div>
         </div>
