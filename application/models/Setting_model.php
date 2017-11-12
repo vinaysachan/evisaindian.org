@@ -5,7 +5,7 @@ class Setting_model extends CORE_Model {
     public function __construct() {
         parent::__construct();
     }
-    
+
     public function get_banners($data = NULL) {
         $this->db->select();
         $this->db->from(TBL_BANNERS . ' as b');
@@ -20,8 +20,8 @@ class Setting_model extends CORE_Model {
         $this->db->order_by("order", "ASC");
         return $this->db->get()->result();
     }
-    
-    public function get_banners_cache($data=NULL){
+
+    public function get_banners_cache($data = NULL) {
         $this->db->cache_on();
         $result = $this->get_banners($data);
         $this->db->cache_off();
@@ -48,7 +48,7 @@ class Setting_model extends CORE_Model {
             return TRUE;
         return FALSE;
     }
-    
+
     public function getPages($offset = NULL, $limit = NULL, $count = NULL) {
         $this->db->select();
         $this->db->from(TBL_PAGES);
@@ -111,8 +111,8 @@ class Setting_model extends CORE_Model {
             return TRUE;
         return FALSE;
     }
-    
-    public function get_application_type($data=NULL) {
+
+    public function get_application_type($data = NULL) {
         $this->db->select();
         $this->db->from(TBL_APPLICATION_TYPE . ' as at');
 
@@ -125,14 +125,14 @@ class Setting_model extends CORE_Model {
         $this->db->order_by("order", "ASC");
         return $this->db->get()->result();
     }
-    
-    public function get_application_type_cache($data=NULL) {
+
+    public function get_application_type_cache($data = NULL) {
         $this->db->cache_on();
         $result = $this->get_application_type($data);
         $this->db->cache_off();
         return $result;
     }
-     
+
     public function save_application_type($data) {
         $this->db->cache_delete_all();
         if ($this->db->insert(TBL_APPLICATION_TYPE, $data))
@@ -146,8 +146,8 @@ class Setting_model extends CORE_Model {
             return TRUE;
         return FALSE;
     }
-    
-    public function get_country_cache($data=NULL) {
+
+    public function get_country_cache($data = NULL) {
         $this->db->cache_on();
         $this->db->select();
         $this->db->from(TBL_COUNTRY);
@@ -158,12 +158,12 @@ class Setting_model extends CORE_Model {
         if (!empty($data['where']['status'])) {
             $this->db->where('status', $data['where']['status']);
         }
-        $result =  $this->db->get()->result(); 
+        $result = $this->db->get()->result();
         $this->db->cache_off();
         return $result;
     }
-    
-    public function get_country($data=NULL) {
+
+    public function get_country($data = NULL) {
         $this->db->select();
         $this->db->from(TBL_COUNTRY);
 
@@ -175,7 +175,7 @@ class Setting_model extends CORE_Model {
         }
         return $this->db->get()->result();
     }
-    
+
     public function change_country_status($status, $id) {
         $this->db->cache_delete_all();
         if ($this->db->update(TBL_COUNTRY, ['status' => $status], ['id' => $id]))
@@ -183,7 +183,7 @@ class Setting_model extends CORE_Model {
         return FALSE;
     }
 
-    public function get_arrival_port($data=NULL) {
+    public function get_arrival_port($data = NULL) {
         $this->db->select();
         $this->db->from(TBL_ARRIVAL_PORT);
 
@@ -195,8 +195,8 @@ class Setting_model extends CORE_Model {
         }
         return $this->db->get()->result();
     }
-    
-    public function get_arrival_port_cache($data=NULL){
+
+    public function get_arrival_port_cache($data = NULL) {
         $this->db->cache_on();
         $result = $this->get_arrival_port($data);
         $this->db->cache_off();
@@ -210,7 +210,6 @@ class Setting_model extends CORE_Model {
         return FALSE;
     }
 
-
     public function update_arrival_port($data, $id) {
         $this->db->cache_delete_all();
         if ($this->db->update(TBL_ARRIVAL_PORT, $data, ['id' => $id]))
@@ -218,9 +217,22 @@ class Setting_model extends CORE_Model {
         return FALSE;
     }
 
- 
+    public function get_setting_value($key) {
+        $this->db->select();
+        $this->db->from(TBL_SETTING . ' as s');
+        $this->db->where('key', $key);
+        $data = $this->db->get()->row();
+        if (!empty($data)) {
+            return $data->value;
+        }
+        return NULL;
+    }
 
-
+    public function update_setting_value($key, $value) {
+        if ($this->db->update(TBL_SETTING, ['value' => $value], ['key' => $key]))
+            return TRUE;
+        return FALSE;
+    }
 
 //    public function do_Login($data) {
 //        try {
@@ -248,7 +260,6 @@ class Setting_model extends CORE_Model {
 //        }
 //    }
 //
-
 //
 //    public function save_application_type() {
 //        $data = $this->input->post();
@@ -265,5 +276,4 @@ class Setting_model extends CORE_Model {
 //            return TRUE;
 //        return FALSE;
 //    }
-
 }

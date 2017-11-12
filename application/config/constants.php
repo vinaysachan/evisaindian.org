@@ -121,8 +121,12 @@ define('BANNER_PATH', './uploads/banner/');
 define('BANNER_FORM_PATH', './uploads/form_banner/');
 define('APPLICATION_IMG', './uploads/application_image/');
 define('PASSPORT_IMG', './uploads/passport/');
-
 define('CAPTCHA_PATH', './uploads/captcha/');
+
+define('SETTING_FORM_BANNER', 'form_banner');
+
+
+
 
 
 define('ADMIN_EMAIL1', 'vnyscn@gmail.com');

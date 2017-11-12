@@ -151,7 +151,8 @@ class Main extends FRONT_Controller {
             'heading'                   =>  'e-Tourist Visa (eTV) Application',
             'getCounrty'                =>  $this->setting_model->get_country_cache(['where'=> ['status' => STATUS_ACTIVE]]), 
             'ports'                     =>  $this->setting_model->get_arrival_port_cache(['where'=> ['status' => STATUS_ACTIVE]]),
-            'application_type'          =>  $this->setting_model->get_application_type_cache(['where' => ['status' => STATUS_ACTIVE]])
+            'application_type'          =>  $this->setting_model->get_application_type_cache(['where' => ['status' => STATUS_ACTIVE]]),
+            'form_banner'               =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
         ];
         $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
@@ -178,6 +179,7 @@ class Main extends FRONT_Controller {
             'apply_details' => $this->operation_model->get_application_details(),
             'getCounrty' => $this->setting_model->get_country_cache(['where'=> ['status' => STATUS_ACTIVE]]),
             'getAllCounrty'     => $this->setting_model->get_country_cache(),
+            'form_banner'       =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
         ];
         $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
@@ -204,7 +206,8 @@ class Main extends FRONT_Controller {
                 'right_bar'                 =>  FALSE,
                 'getCounrty'                =>  $this->setting_model->get_country_cache(['where'=> ['status' => STATUS_ACTIVE]]),
                 'getAllCounrty'             =>  $this->setting_model->get_country_cache(),
-                'apply_details'             =>  $this->operation_model->get_application_details()
+                'apply_details'             =>  $this->operation_model->get_application_details(),
+                'form_banner'               =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
             ];
             $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
         } else {
@@ -245,7 +248,8 @@ class Main extends FRONT_Controller {
             'apply_details' => $this->operation_model->get_application_details(),
             'getCounrty'                =>  $this->setting_model->get_country_cache(['where'=> ['status' => STATUS_ACTIVE]]),
             'ports'                     =>  $this->setting_model->get_arrival_port_cache(['where'=> ['status' => STATUS_ACTIVE]]),
-            'application_type'          =>  $this->setting_model->get_application_type_cache(['where' => ['status' => STATUS_ACTIVE]])
+            'application_type'          =>  $this->setting_model->get_application_type_cache(['where' => ['status' => STATUS_ACTIVE]]),
+            'form_banner'               =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
         ];
         $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
@@ -280,7 +284,8 @@ class Main extends FRONT_Controller {
             'show_application_link'     =>  FALSE,
             'right_bar'                 =>  FALSE,
             'heading'                   =>  'e-Tourist Visa (eTV) Application',
-            'apply_details'             =>  $this->operation_model->get_application_details()
+            'apply_details'             =>  $this->operation_model->get_application_details(),
+            'form_banner'               =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
         ];
         $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
@@ -295,7 +300,8 @@ class Main extends FRONT_Controller {
 //            'meta_description' => $this->meta_description,
 //            'meta_keywords' => $this->meta_keywords,
             'heading' => 'Conform Details',
-            'apply_details' => $this->operation_model->get_application_details()
+            'apply_details' => $this->operation_model->get_application_details(),
+            'form_banner'               =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
         ];
         $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
@@ -310,7 +316,8 @@ class Main extends FRONT_Controller {
 //            'meta_description' => $this->meta_description,
 //            'meta_keywords' => $this->meta_keywords,
             'heading' => 'e-Tourist Visa (eTV) Application',
-            'apply_details' => $this->operation_model->get_application_details()
+            'apply_details' => $this->operation_model->get_application_details(),
+            'form_banner'               =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
         ];
         $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
@@ -325,7 +332,8 @@ class Main extends FRONT_Controller {
 //            'meta_description' => $this->meta_description,
 //            'meta_keywords' => $this->meta_keywords,
             'heading' => 'e-Tourist Visa (eTV) Application',
-            'apply_details' => $this->operation_model->get_application_details()
+            'apply_details' => $this->operation_model->get_application_details(),
+            'form_banner'               =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
         ];
         $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
@@ -340,7 +348,8 @@ class Main extends FRONT_Controller {
 //            'meta_description' => $this->meta_description,
 //            'meta_keywords' => $this->meta_keywords,
             'heading' => 'e-Tourist Visa (eTV) Application',
-            'apply_details' => $this->operation_model->get_application_details()
+            'apply_details' => $this->operation_model->get_application_details(),
+            'form_banner'               =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
         ];
         $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }

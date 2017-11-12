@@ -103,7 +103,8 @@ class Util {
             $this->CI->upload->initialize($config);
             if (!$this->CI->upload->do_upload($input_name)) {
                 $error = array('error' => $this->CI->upload->display_errors());
-                print_r($error);
+                return $error;
+//                print_r($error);
             } else {
                 $upload_img_data = array('upload_data' => $this->CI->upload->data());
                 @chmod($upload_img_data['upload_data']['full_path'], 0777);

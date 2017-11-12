@@ -74,14 +74,34 @@ class setting extends Admin_Controller {
     }
     
     public function form_banner() {
-        
-        
-        
-        $data = [
-            'heading' => 'Manage Form Page Banner',
-            'sub_heading' => '',
-            'breadcrumb' => [base_url('admin') => '<i class="fa fa-dashboard"></i> Home', 'Form Banner'],
-            'banners' => $this->setting_model->get_banners()
+        $old_img        =   $this->setting_model->get_setting_value(SETTING_FORM_BANNER);
+        if (!empty($this->input->post('submit'))) {
+            $return             =   [];
+            $img                =   $this->util->fileUpload(BANNER_FORM_PATH, 'img', SITE_NAME, 'jpeg|jpg|png', ['h' => 125]);    
+            if (!empty($img['error']) && ($_FILES['img']['size'] != 0)) {
+                $return         =   ['sts' => STATUS_ERROR, 'msg' => $img['error']];
+                unset($img);
+            }
+            if(empty($img['error'])) {
+                //Get the old IMGAE :-
+                $old_img_path   =   ltrim($old_img,base_url());
+                if (file_exists($old_img_path)){
+                    @unlink($old_img_path);
+                }
+                //Update Imgae :-
+                if($this->setting_model->update_setting_value(SETTING_FORM_BANNER,  base_url(BANNER_FORM_PATH.$img))) {
+                    $this->session->set_flashdata(SUCCESS_MSG, 'Banner Save successfully.');
+                    $return     =   ['sts' => STATUS_SUCCESS, 'msg' => 'Banner Save successfully.'];
+                }
+            }
+            echo json_encode($return);
+            exit();
+        }
+        $data               = [
+            'heading'           =>  'Manage Form Page Banner',
+            'sub_heading'       =>  '',
+            'breadcrumb'        =>  [base_url('admin') => '<i class="fa fa-dashboard"></i> Home', 'Form Banner'],
+            'old_img'           =>  $old_img
         ];
         $this->load->view('templates/admin.tpl', array_merge($this->data, $data));
     }

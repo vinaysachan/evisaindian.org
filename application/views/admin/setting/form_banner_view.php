@@ -1,10 +1,18 @@
 <div class="box-body pt15">
-    <form name="fbanner_aeFrm" id="fbanner_aeFrm" method="post" action="" class="form-horizontal" enctype="multipart/form-data">
+    <form name="fbanner_aeFrm" id="fbanner_aeFrm" method="post" action="<?= base_url('admin/setting/form_banner') ?>" class="form-horizontal" enctype="multipart/form-data">
         <div class="form-group">				
             <label class="col-sm-2 control-label require">Banner Image</label>
             <div class="col-sm-5">
-                <?= form_upload('img', NULL, (empty($banner[0]->img)) ? ['class' => 'view_photo mt10', 'accept' => 'image/.jpe,.jpg,.jpeg,.png', 'required' => '', 'label-name' => 'Banner'] : ['class' => 'view_photo mt10', 'accept' => 'image/.jpe,.jpg,.jpeg,.png']) ?>
+                <?= form_upload('img', NULL, ['id' => 'img', 'class' => 'view_photo mt10', 'accept' => 'image/.jpe,.jpg,.jpeg,.png', 'required' => '', 'label-name' => 'Banner']) ?>
             </div>
+        </div>
+        <div class="mt30">
+            <h4>Banner Specifications :- </h4>
+            <ul>
+                <li><strong>Format</strong> - JPEG/PNG</li>
+                <li><strong>Size - </strong> Maximum 1 MB</li>
+                <li>The minimum dimensions are 1100 pixels (width) x 125 pixels (height).</li>
+            </ul>
         </div>
         <div class="box-footer">
             <div class="col-sm-2">
@@ -15,4 +23,8 @@
             </div>
         </div>
     </form>
+    <hr/><hr/>
+    <h4>Current Banner :-</h4>
+    <hr/><hr/>
+    <img src="<?=$old_img?>" height="125" width="100%" />
 </div>

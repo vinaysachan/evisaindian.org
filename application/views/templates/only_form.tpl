@@ -13,7 +13,7 @@
                         <div class="col-lg-12 mx-auto bg-white page_content">
                             <?php if (empty($banners)) : ?>
                                 <div class="banner_top">
-                                    <img src="<?= base_url('public/img/mumbai.jpg') ?>">
+                                    <img src="<?= (empty($form_banner)) ? base_url('public/img/mumbai.jpg') : $form_banner ?>">
                                 </div>
                             <?php endif; ?>
                             <h1><?= (!empty($heading)) ? $heading : '' ?></h1>
