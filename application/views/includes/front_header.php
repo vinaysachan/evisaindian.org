@@ -10,7 +10,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="container text-right">
-                <span><img src="<?=base_url('public/img/uk.png')?>" class="mr20" ><?= CONTACT_NO_UK ?></span>
+                <span><img src="<?=base_url('public/img/uk.png')?>" class="mr20" >UK  <?= CONTACT_NO_UK ?></span>
                 <span class="ml25"><i class="fa fa-envelope fs20 mr10"></i><?= CONTACT_EMAIL1 ?></span>
             </div>
             <div class="collapse navbar-collapse text-right" id="navbarResponsive">

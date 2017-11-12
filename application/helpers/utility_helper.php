@@ -44,7 +44,7 @@ function country_name($code=NULL,$id=NULL) {
 function apptype($type = 'up', $get = 'text') {
     $clist          =   [];
     $CI             =   & get_instance();
-    $at             =   $CI->setting_model->get_application_type_cache();
+    $at             =   $CI->setting_model->get_application_type();
     foreach ($at as $a) {
         $clist[$a->type] = $a->name;
     }

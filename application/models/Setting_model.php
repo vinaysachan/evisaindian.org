@@ -112,7 +112,7 @@ class Setting_model extends CORE_Model {
         return FALSE;
     }
     
-    public function     get_application_type($data=NULL) {
+    public function get_application_type($data=NULL) {
         $this->db->select();
         $this->db->from(TBL_APPLICATION_TYPE . ' as at');
 
@@ -128,23 +128,13 @@ class Setting_model extends CORE_Model {
     
     public function get_application_type_cache($data=NULL) {
         $this->db->cache_on();
-        $this->db->select();
-        $this->db->from(TBL_APPLICATION_TYPE . ' as at');
-
-        if (!empty($data['where']['id'])) {
-            $this->db->where('id', $data['where']['id']);
-        }
-        if (!empty($data['where']['status'])) {
-            $this->db->where('status', $data['where']['status']);
-        }
-        $this->db->order_by("order", "ASC");
-        // Turn caching off for this one query
-        $result =  $this->db->get()->result(); 
+        $result = $this->get_application_type($data);
         $this->db->cache_off();
         return $result;
     }
      
     public function save_application_type($data) {
+        $this->db->cache_delete_all();
         if ($this->db->insert(TBL_APPLICATION_TYPE, $data))
             return TRUE;
         return FALSE;

@@ -73,6 +73,19 @@ class setting extends Admin_Controller {
         $this->load->view('templates/admin.tpl', array_merge($this->data, $data));
     }
     
+    public function form_banner() {
+        
+        
+        
+        $data = [
+            'heading' => 'Manage Form Page Banner',
+            'sub_heading' => '',
+            'breadcrumb' => [base_url('admin') => '<i class="fa fa-dashboard"></i> Home', 'Form Banner'],
+            'banners' => $this->setting_model->get_banners()
+        ];
+        $this->load->view('templates/admin.tpl', array_merge($this->data, $data));
+    }
+    
     public function del_banner($b_id = NULL) {
         if (empty($b_id)) {
             $this->session->set_flashdata(WARNING_MSG, ['Warning!', 'Bad URL']);

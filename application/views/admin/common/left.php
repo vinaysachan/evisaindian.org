@@ -20,7 +20,7 @@
 			<li class="<?= ($class == 'home' && $method == 'applicationDetails') ? 'active' : '' ?>">
                 <?= anchor(base_url('admin/home/applicationDetails'), '<i class="fa fa-envelope"></i> <span>Application Details</span>') ?>
             </li>
-            <li class="treeview <?= ((in_array($class, ['setting'])) && (in_array($method, ['index', 'banner', 'banner_ae','page', 'page_ae','app_type_ae','application_type','country','arrival_port','arrival_port_ae']))) ? 'active' : '' ?>">  
+            <li class="treeview <?= ((in_array($class, ['setting'])) && (in_array($method, ['index', 'banner', 'banner_ae','page', 'page_ae','app_type_ae','application_type','country','arrival_port','arrival_port_ae','form_banner']))) ? 'active' : '' ?>">  
                 <a href="javascript:void(0)">
                     <i class="fa fa-internet-explorer"></i>
                     <span>Website Management</span>
@@ -41,7 +41,10 @@
                     </li>
                     <li class="<?= ((in_array($class, ['setting'])) && (in_array($method, ['arrival_port','arrival_port_ae']))) ? 'active' : '' ?>">
                         <?= anchor(base_url('admin/setting/arrival_port'), '<i class="fa fa-plane"></i> <span>Arrival Port in India</span>') ?>
-                    </li> 
+                    </li>
+                    <li class="<?= ((in_array($class, ['form_banner'])) && (in_array($method, ['form_banner']))) ? 'active' : '' ?>">
+                        <?= anchor(base_url('admin/setting/form_banner'), '<i class="fa fa-plane"></i> <span>Manage Form Banner</span>') ?>
+                    </li>
                 </ul>
             </li>
         </ul>
