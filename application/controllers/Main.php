@@ -177,7 +177,7 @@ class Main extends FRONT_Controller {
             'right_bar'                 =>  FALSE,
             'heading' => 'Complete Partially Filled Form',
             'apply_details' => $this->operation_model->get_application_details(),
-            'getCounrty' => $this->setting_model->get_country_cache(['where'=> ['status' => STATUS_ACTIVE]]),
+            'getCounrty' => $this->setting_model->get_country_cache(),
             'getAllCounrty'     => $this->setting_model->get_country_cache(),
             'form_banner'       =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
         ];
@@ -204,7 +204,7 @@ class Main extends FRONT_Controller {
 //                'meta_keywords' => $this->meta_keywords,
                 'show_application_link'     =>  FALSE,
                 'right_bar'                 =>  FALSE,
-                'getCounrty'                =>  $this->setting_model->get_country_cache(['where'=> ['status' => STATUS_ACTIVE]]),
+                'getCounrty'                =>  $this->setting_model->get_country_cache(),
                 'getAllCounrty'             =>  $this->setting_model->get_country_cache(),
                 'apply_details'             =>  $this->operation_model->get_application_details(),
                 'form_banner'               =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
@@ -246,7 +246,7 @@ class Main extends FRONT_Controller {
             'right_bar'                 =>  FALSE,
             'heading' => 'e-Tourist Visa (eTV) Application',
             'apply_details' => $this->operation_model->get_application_details(),
-            'getCounrty'                =>  $this->setting_model->get_country_cache(['where'=> ['status' => STATUS_ACTIVE]]),
+            'getCounrty'                =>  $this->setting_model->get_country_cache(),
             'ports'                     =>  $this->setting_model->get_arrival_port_cache(['where'=> ['status' => STATUS_ACTIVE]]),
             'application_type'          =>  $this->setting_model->get_application_type_cache(['where' => ['status' => STATUS_ACTIVE]]),
             'form_banner'               =>  $this->setting_model->get_setting_value(SETTING_FORM_BANNER)
