@@ -21,8 +21,8 @@
         <form class="text-center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
             <!-- <input type="hidden" name="cmd" value="_cart"> -->
             <input type="hidden" name="cmd" value="_xclick">
-            <input type="hidden" name="business" value="ranjeet22031993@gmail.com">
-            <input type="hidden" name="item_name" value="Noral Visa">
+            <input type="hidden" name="business" value="touristvisa701@gmail.com">
+            <input type="hidden" name="item_name" value="<?= apptype($apply_details[0]->app_type); ?>">
             <input type="hidden" name="item_number" value="<?= $this->session->userdata('application_id'); ?>">
             <input type="hidden" name="amount" value="<?= apptype_amount($apply_details[0]->app_type); ?>">
             <input type="hidden" name="currency_code" value="USD">
