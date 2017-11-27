@@ -77,20 +77,18 @@
                 <input type="text" name="passportno" required="" label-name="Passport No" class="form-control" id="passportno" placeholder="Passport No">
             </div>
         </div>
-        
         <div class="form-group row">
-            <label for="purpose_of_visit" class="col-sm-4 require">Visa Type</label>
-            <div class="col-sm-6">
+            <label for="purpose_of_visit" class="col-sm-6 require">Visa Type</label>
+            <div class="col-sm-3">
                 <select name="purpose_of_visit" required="" class="form-control" id="purpose_of_visit">
                     <option value="">Select</option>
-                    <option <?= ($apply_details[0]->purpose_of_visit == 'Business') ? 'selected=""' : '' ?> value="Business" title="Business"> Business</option>
-                    <option <?= ($apply_details[0]->purpose_of_visit == 'Medical Treatement of Self') ? 'selected=""' : '' ?> value="Medical Treatement of Self" title="Medical Treatement of Self"> Medical Treatement of Self </option>
-                    <option <?= ($apply_details[0]->purpose_of_visit == 'Meeting friends/relatives') ? 'selected=""' : '' ?> value="Meeting friends/relatives" title="Meeting friends/relatives"> Meeting friends/relatives </option>
-                    <option <?= ($apply_details[0]->purpose_of_visit == 'Tourism') ? 'selected=""' : '' ?> value="Tourism" title="Tourism"> Tourism</option>
+                    <option value="Business" title="Business"> Business</option>
+                    <option value="Medical Treatement of Self" title="Medical Treatement of Self"> Medical Treatement of Self </option>
+                    <option value="Meeting friends/relatives" title="Meeting friends/relatives"> Meeting friends/relatives </option>
+                    <option value="Tourism" title="Tourism"> Tourism</option>
                 </select>
             </div>
         </div>
-        
         <div class="form-group row">
             <label for="dob" class="col-sm-6 require">Date of Birth</label>
             <div class="col-sm-2">
