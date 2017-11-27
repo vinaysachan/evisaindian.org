@@ -105,6 +105,7 @@ class Operation_model extends CORE_Model {
             'expected_date_arrival'     =>  get_date($this->input->post('date_of_arrival')),
             'email'                     =>  $this->input->post('email'),
             'phone'                     =>  $this->input->post('phone'),
+            'purpose_of_visit'          =>  $this->input->post('purpose_of_visit'),
             'status'                    =>  1,
             'application_status'        =>  1
         );
@@ -251,7 +252,6 @@ class Operation_model extends CORE_Model {
         $data = array(
             'durationofvisa' => $this->input->post('visa_day'),
             'no_of_entries' => $this->input->post('entries_no'),
-            'purpose_of_visit' => $this->input->post('PurposeVisit'),
             'app_type' => $this->input->post('app_type'),
             'dateofjourney' => get_date($this->input->post('dateofjourney')),
             'port_of_exit' => $this->input->post('port_of_exit'),
