@@ -157,8 +157,6 @@ class Main extends FRONT_Controller {
         $this->load->view('templates/only_form.tpl', array_merge($this->data, $data));
     }
     
-    
-    
     function visa_reg() {
         if (empty($this->session->userdata('application_id'))) {
             redirect(base_url('apply_visa'));

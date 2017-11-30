@@ -21,18 +21,7 @@
                 <select required="" name="entries_no" class="form-control" id="entries_no"><option value="Double" title="Double">Double</option></select>
             </div>
         </div>
-        <div class="form-group row">
-            <label for="" class="col-sm-4 require">Purpose of Visit</label>
-            <div class="col-sm-6">
-                <select name="PurposeVisit" required="" class="form-control" id="passportType">
-                    <option value="">Select</option>
-                    <option <?= ($apply_details[0]->purpose_of_visit == 'Business') ? 'selected=""' : '' ?> value="Business" title="Business"> Business</option>
-                    <option <?= ($apply_details[0]->purpose_of_visit == 'Medical Treatement of Self') ? 'selected=""' : '' ?> value="Medical Treatement of Self" title="Medical Treatement of Self"> Medical Treatement of Self </option>
-                    <option <?= ($apply_details[0]->purpose_of_visit == 'Meeting friends/relatives') ? 'selected=""' : '' ?> value="Meeting friends/relatives" title="Meeting friends/relatives"> Meeting friends/relatives </option>
-                    <option <?= ($apply_details[0]->purpose_of_visit == 'Tourism') ? 'selected=""' : '' ?> value="Tourism" title="Tourism"> Tourism</option>
-                </select>
-            </div>
-        </div>
+        
         <div class="form-group row">
             <label for="app_type" class="col-sm-4 require">Application Type</label>
             <div class="col-sm-6">

@@ -78,6 +78,18 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="purpose_of_visit" class="col-sm-6 require">Visa Type</label>
+            <div class="col-sm-3">
+                <select name="purpose_of_visit" required="" class="form-control" id="purpose_of_visit">
+                    <option value="">Select</option>
+                    <option value="Business" title="Business"> Business</option>
+                    <option value="Medical Treatement of Self" title="Medical Treatement of Self"> Medical Treatement of Self </option>
+                    <option value="Meeting friends/relatives" title="Meeting friends/relatives"> Meeting friends/relatives </option>
+                    <option value="Tourism" title="Tourism"> Tourism</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="dob" class="col-sm-6 require">Date of Birth</label>
             <div class="col-sm-2">
                 <input type="text" required="" label-name="Date of Birth" data-max_date="<?= date('Y,m,d', strtotime("-0 year")) ?>" class="form-control date_picker" name="dob" id="dob" placeholder="Date of Birth" >

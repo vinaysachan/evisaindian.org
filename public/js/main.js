@@ -254,6 +254,7 @@ if ($('.date_picker').length) {
             maxDate: maxDate,
             minDate: minDate,
             dateFormat: dateFormat,
+            yearRange: "-90:+20",
         });
     }); 
 }
