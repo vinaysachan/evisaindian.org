@@ -3,9 +3,9 @@
         <div class="bd-example" data-example-id="">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <?php foreach ($banners as $k => $b) : ?>
+                    <?php /*foreach ($banners as $k => $b) : ?>
                         <li data-target="#carouselExampleIndicators" data-slide-to="<?=$k?>" class="<?=($k==0)?'active':''?>"></li>
-                    <?php endforeach; ?>
+                    <?php endforeach; */?>
                 </ol>
                 <div class="carousel-inner">
                     <?php foreach ($banners as $k => $b) : ?>
