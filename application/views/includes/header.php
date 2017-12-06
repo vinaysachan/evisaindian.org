@@ -29,7 +29,7 @@
 <?php if (!empty($show_application_link)) : ?>
     <div id="application_btn" class="container text-center">
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-6 col-md-3">
                 <div class="info-box bg-orange">
                     <span class="step">Step 1</span>
                     <a href="<?= base_url('apply_visa') ?>">
@@ -38,7 +38,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-6 col-md-3">
                 <div class="info-box bg-green">
                     <span class="step">Step 2</span>
                     <a href="<?= base_url('serach_app') ?>">
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="clearfix visible-sm-block"></div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-6 col-md-3">
                 <div class="info-box bg-red">
                     <span class="step">Step 3</span>
                     <a href="<?= base_url('serach_app') ?>">
@@ -57,7 +57,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-6 col-md-3">
                 <div class="info-box bg-blue">
                     <span class="step">Step 4</span>
                     <a href="<?= base_url('app_status') ?>">

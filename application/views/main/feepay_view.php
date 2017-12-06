@@ -22,9 +22,15 @@
 
         </ul>
         <span class="red_heading text_bold" style="color:red; margin-left:24px">Disclaimer</span>
-        <p><input type="checkbox" name="agreement" id="agreement" value="agreed" onchange="agrement();" />I, the applicant, hereby certify that I agree to all the terms and conditions given on the website www.e-IndianVisa.com and understand all the questions and statements of this application. The answers and information furnished in this application are true and correct to the best of my knowledge and belief. I understand and agree that once the fee is paid towards the Temporary application ID is 100% non-refundable and I will not claim a refund or dispute the transaction incase of cancellation request raised at my end.</p>
-        <p><?= apptype($apply_details[0]->app_type)?> = $<?=apptype_amount($apply_details[0]->app_type)?></p>
-        <p style="display: none;" id="payment">
-            <a href="<?= base_url('main/payment') ?>" class="btn btn-primary">Proces to Payment</a></p>
+        <p><input type="checkbox" name="agreement" id="agreement" value="agreed" onchange="agrement();" />I, the applicant, hereby certify that I agree to all the terms and conditions given on the website https://www.e-touristindiavisa.org and understand all the questions and statements of this application. The answers and information furnished in this application are true and correct to the best of my knowledge and belief. I understand and agree that once the fee is paid towards the Temporary application ID is 100% non-refundable and I will not claim a refund or dispute the transaction incase of cancellation request raised at my end.</p>
+        <p><?= apptype($apply_details[0]->app_type) ?> = $<?= apptype_amount($apply_details[0]->app_type) ?></p>
+
+        <div class="container">
+            <div class="row" style="display: none;" id="payment">
+                <div class="col-md-8 ml-md-auto">
+                    <a href="<?= base_url('main/payment') ?>" class="btn btn-primary">Pay Now</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
