@@ -28,7 +28,7 @@
         <div class="container">
             <div class="row" style="display: none;" id="payment">
                 <div class="col-md-8 ml-md-auto">
-                    <a href="<?= base_url('main/payment') ?>" class="btn btn-primary">Pay Now</a>
+                    <a href="<?= base_url('main/payment') ?>" class="btn btn-warning pl30 pr30">Pay Now</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,4 @@
-<div class="right-box"> 
-    <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=q7JusASCPbMlx4UAp3OkMoYCA35ueeUtNYUTdOQviKH4UActz065EsHc6GL0"></script></span>
+<div class="right-box">
     <h3 class="mt15"><i class="fa fa-phone fs20 mr10"></i> 24/7 Customer Care</h3>
     <div class="right-box-content"> 
         <ul class="blog-popular-post">

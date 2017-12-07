@@ -3,10 +3,10 @@
     <head>
         <?php /* Meta Header */ $this->load->view('includes/meta_header'); ?>
     </head>
-    <body class="bg-light form_page">
+    <body class=" form_page">
         <?php /* Google Analytics */ $this->load->view('analyticstracking'); ?>
         <?php /* Top Haeder Part */ $this->load->view('includes/header'); ?>
-        <div class="bg-light">
+        <div class="">
             <section>
                 <div class="container">
                     <div class="row">

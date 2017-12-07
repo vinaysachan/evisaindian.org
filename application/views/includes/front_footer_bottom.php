@@ -12,16 +12,19 @@
                                             <?= $this->setting_model->page_name_by_slug($pl['slug']) ?>
                                         </a>
                                     </li>
-                                <?php endif;
+                                <?php
+                                endif;
                             endforeach;
-                        endif; ?>
+                        endif;
+                        ?>
                     </ul>
+                     <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=q7JusASCPbMlx4UAp3OkMoYCA35ueeUtNYUTdOQviKH4UActz065EsHc6GL0"></script></span>
                 </div>
             </div>
             <div class="col-sm-5">
                 <h3>Disclaimers:</h3>
                 <p>
-                    <a href="<?=  base_url()?>"><?=  base_url()?></a> is in charge of full visa administrations to India. This is a business site to apply eVisa to India through Indian Government Website, you will be charged an expense for utilizing our administrations. Our expense will be higher than Indian Government on the off chance that you apply through the Indian Embassy or site on the web. Read all our Terms and Conditions carefully before using our services.
+                    <a href="<?= base_url() ?>"><?= base_url() ?></a> is in charge of full visa administrations to India. This is a business site to apply eVisa to India through Indian Government Website, you will be charged an expense for utilizing our administrations. Our expense will be higher than Indian Government on the off chance that you apply through the Indian Embassy or site on the web. Read all our Terms and Conditions carefully before using our services.
                 </p>
             </div>
             <div class="col-sm-4 text-right">
