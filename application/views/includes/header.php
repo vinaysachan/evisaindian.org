@@ -39,7 +39,7 @@
             <div class="col-4">
                 <div class="info-box bg-green">
                     <a href="<?= base_url('serach_app') ?>">
-                        <div>Complete Partially<br/>filled Form</div>
+                        <div>Complete Partially<br/>Filled Form</div>
                     </a>
                 </div>
             </div>
