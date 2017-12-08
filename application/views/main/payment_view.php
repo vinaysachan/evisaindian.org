@@ -18,9 +18,11 @@
                 <td>$<?= apptype_amount($apply_details[0]->app_type); ?></td>
             </tr>
             <tr>
-                <td><input type="image" name="submit" border="0" src="<?= base_url('public/img/paypal.png') ?>" alt="PayPal - The safer, easier way to pay online" height="30"/></td>
                 <td>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <img src="<?= base_url('public/img/paypal.png') ?>" alt="PayPal - The safer, easier way to pay online" height="30">
+                </td>
+                <td>
+                    <form class="form-horizontal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                         <!-- <input type="hidden" name="cmd" value="_cart"> -->
                         <input type="hidden" name="cmd" value="_xclick">
                         <input type="hidden" name="business" value="touristvisa701@gmail.com">
@@ -32,7 +34,7 @@
                         <input type='hidden' name='return' value='<?= base_url('main/payment_success') ?>'>
                         <!--<input type="image" name="submit" border="0" src="<?= base_url('public/img/paypal.png') ?>" alt="PayPal - The safer, easier way to pay online" width="24%" height="66"/>-->
                         <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
-                        <button type="submit" alt="PayPal - The safer, easier way to pay online" href="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" class="btn btn-warning pl30 pr30">Pay With Paypal</button>
+                        <button name="submit" type="submit" class="btn btn-primary pl30 pr30">Pay With Paypal</button>
                     </form>
                 </td>
             </tr>

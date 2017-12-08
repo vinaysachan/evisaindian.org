@@ -64,6 +64,7 @@ body.form_page .page_content {
 body.form_page .banner_top {
     margin:0px -15px 0px -15px;
 }
+
 .banner_top img {
     width: 100%;
     max-height: 125px;
@@ -335,9 +336,9 @@ body.form_page .form-group label {
         height: 350px; 
         width: 100% ;
     }
-/*    body.form_page .form-group label {
-        text-align: left !important;
-    }*/
+    /*    body.form_page .form-group label {
+            text-align: left !important;
+        }*/
 }
 
 .show_images > img,.show_images > image {
@@ -597,6 +598,11 @@ Font Size
 @media screen and (min-width: 720px) and (max-width:1024px){
     .site_img {
         height: 140px;
+    }
+    .page_content p {
+        font-size: 14px;
+        line-height: 28px;
+        font-family: 'Roboto Mono', monospace;
     }
 }
 .page_container {
