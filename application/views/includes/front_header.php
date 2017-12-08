@@ -2,7 +2,7 @@
     <div class="container align-items-start">
         <div class="col-3">
             <a title="<?= SITE_NAME ?>" href="<?= base_url() ?>" class="navbar-brand js-scroll-trigger">
-                <img alt="<?= SITE_NAME ?>" class="" src="<?= base_url('public/img/logo.png') ?>">
+                <img alt="<?= SITE_NAME ?>" class="site_img" src="<?= base_url('public/img/logo.png') ?>">
             </a>
         </div>
         <div class="col-9 text-right align-items-end">

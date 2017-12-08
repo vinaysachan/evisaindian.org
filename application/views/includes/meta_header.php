@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
 <title><?= (!empty($title)) ? $title : NULL ?></title>
 <meta name="description" content="<?= (!empty($meta_description)) ? $meta_description : NULL ?>">
 <meta name="keywords" content="<?= (!empty($meta_keywords)) ? $meta_keywords : NULL ?>">

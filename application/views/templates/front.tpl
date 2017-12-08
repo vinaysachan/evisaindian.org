@@ -9,12 +9,12 @@
         <?php /* Top Haeder Part */ $this->load->view('includes/header'); ?>
         <div class="">
             <section>
-                <div class="container">
+                <div class="page_container">
                     <div class="row">
 						<?php if (!empty($right_bar)) :
                             $this->load->view('includes/right_bar');
                         endif; ?>
-                        <div class="<?= (!empty($right_bar)) ? 'col-lg-9' : 'col-lg-12' ?> mx-auto bg-white page_content">
+                        <div class="<?= (!empty($right_bar)) ? 'col-9' : 'col-12' ?> mx-auto bg-white page_content">
                             <?php if (empty($banners)) : ?>
                                 <div class="banner_top">
                                     <img src="<?= base_url('public/img/mumbai.jpg') ?>">

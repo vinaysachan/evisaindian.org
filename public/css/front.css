@@ -25,7 +25,7 @@ body.form_page .form-group label {
         margin-top: 10px;
         padding: 0px 10px;
     }
-	
+
 }
 
 .navbar-white .navbar-toggle .navbar-toggler-icon {
@@ -98,7 +98,7 @@ body.form_page .banner_top {
     padding: 3px 0px 3px 0px;
     border-bottom: 1px solid #e8e8e8;
     background: #e55a15;
-    color: #000000;
+    color: #fff;
     font-family: Arial,sans-serif;
     font-size: 22px;
     font-weight: bold;
@@ -235,7 +235,7 @@ label.error, span.error, div.error {
     padding: 10px 0; 
     text-align: center;
     text-transform: uppercase;
-    background-color: blueviolet;
+    background-color: #EE8907;
 }
 .right-box-content {
     padding: 10px;
@@ -336,9 +336,9 @@ body.form_page .form-group label {
         height: 350px; 
         width: 100% ;
     }
-	body.form_page .form-group label {
-    	text-align: left !important;
-	}
+    body.form_page .form-group label {
+        text-align: left !important;
+    }
 }
 
 .show_images > img,.show_images > image {
@@ -578,3 +578,74 @@ Font Size
 .fs30 { font-size: 30px !important ; }
 .fs35 { font-size: 35px !important ; }
 .fs40 { font-size: 40px !important ; }
+
+.h10 { height: 10px !important ; }
+.h50 { height: 50px !important ; }
+.h80 { height: 80px !important ; }
+.h100 { height: 100px !important ; }
+.h130 { height: 130px !important ; }
+.h150 { height: 150px !important ; }
+.h200 { height: 200px !important ; }
+.h250 { height: 250px !important ; }
+
+
+
+@media  screen and (min-width: 321px) and (max-width:960px){
+    .site_img {
+        height: auto;
+    }
+}
+@media screen and (min-width: 720px) and (max-width:1024px){
+    .site_img {
+        height: 140px;
+    }
+}
+.page_container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .page_container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .page_container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .page_container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .page_container {
+        max-width: 1140px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
