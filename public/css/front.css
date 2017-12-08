@@ -12,7 +12,9 @@ body {
 header {
     padding: 1px 0 20px;
 }
-
+body.form_page .form-group label {
+    text-align: right;font-size: 14px; color: #333538;
+}
 @media (min-width: 992px) {
     header {
         padding: 1px 0 20px;
@@ -23,6 +25,7 @@ header {
         margin-top: 10px;
         padding: 0px 10px;
     }
+	
 }
 
 .navbar-white .navbar-toggle .navbar-toggler-icon {
@@ -101,9 +104,7 @@ body.form_page .banner_top {
     font-weight: bold;
     line-height: 33px;
 }
-body.form_page .form-group label {
-    text-align: right;font-size: 14px; color: #333538;
-}
+
 .form-group label {
     text-align: right;
 }
@@ -327,13 +328,17 @@ ul.blog-popular-post li a:hover{
     height: 100%; 
     width: 100% ;
 }
-
+body.form_page .form-group label {
+    text-align: right;font-size: 14px; color: #333538;
+}
 @media screen and (min-width:767px){
     .carousel-inner > .carousel-item > .banner {
         height: 350px; 
         width: 100% ;
     }
-
+	body.form_page .form-group label {
+    	text-align: left !important;
+	}
 }
 
 .show_images > img,.show_images > image {
