@@ -597,7 +597,7 @@ Font Size
 }
 @media screen and (min-width: 720px) and (max-width:1024px){
     .site_img {
-        height: 140px;
+        height: 70px;
     }
     .page_content p {
         font-size: 16px;
