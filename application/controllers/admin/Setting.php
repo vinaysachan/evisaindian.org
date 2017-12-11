@@ -29,7 +29,7 @@ class setting extends Admin_Controller {
             if ($post['submit'] == 'add') {
                 unset($post['submit']);
                 if (!empty($img))
-                    $post['img'] = $img;
+                    $post['img'] = base_url(BANNER_PATH.$img);
                 if ($this->setting_model->save_banner($post)) {
                     $this->session->set_flashdata(SUCCESS_MSG, ['Congratulaton!', 'Banner Save successfully']);
                     redirect('admin/setting/banner');
@@ -38,11 +38,12 @@ class setting extends Admin_Controller {
                 $post['status'] = ($post['status'] == STATUS_ACTIVE) ? STATUS_ACTIVE : STATUS_IN_ACTIVE;
                 unset($post['submit']);
                 if ($img) {
-                    $post['img'] = $img;
+                    $post['img'] = base_url(BANNER_PATH.$img);
                     //Remove the old Image
                     $old_img = $post['old_img'];
-                    $old_img_path = BANNER_PATH . $old_img;
-                    if (file_exists($old_img_path)) {
+                    //Get the old IMGAE :-
+                    $old_img_path   =   ltrim($old_img,base_url());
+                    if (file_exists($old_img_path)){
                         @unlink($old_img_path);
                     }
                 }
@@ -119,7 +120,7 @@ class setting extends Admin_Controller {
         if ($this->setting_model->delete_banner($b_id)) {
             if ($banner[0]->img) {
                 //Remove the old Image
-                $old_img_path = BANNER_PATH . $banner[0]->img;
+                $old_img_path   =   ltrim($banner[0]->img,base_url());
                 if (file_exists($old_img_path)) {
                     @unlink($old_img_path);
                 }

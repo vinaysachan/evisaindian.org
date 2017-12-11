@@ -21,7 +21,7 @@
                 <?php if (!empty($banner[0]->img)) : ?>
                     <input type="hidden" name="old_img" value="<?= $banner[0]->img ?>" >
                     <div class="show_images">
-                        <img src="<?= base_url(BANNER_PATH . $banner[0]->img) ?>">
+                        <img src="<?= $banner[0]->img ?>">
                     </div>
                 <?php endif; ?>
             </div>

@@ -25,7 +25,7 @@
                     <tr class="<?= ($b->status == STATUS_ACTIVE) ? '' : 'warning' ?>">    
                         <th><?= $s ?></th>
                         <td class="text-center">
-                            <img width="200" style="max-height: 200px;" src="<?= base_url(BANNER_PATH . $b->img) ?>">
+                            <img width="200" style="max-height: 200px;" src="<?= $b->img ?>">
                             <div class="text-left">
                                 <strong>Title : </strong><?= $b->title ?>
                             </div>

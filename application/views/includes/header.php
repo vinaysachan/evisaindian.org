@@ -10,7 +10,7 @@
                 <div class="carousel-inner">
                     <?php foreach ($banners as $k => $b) : ?>
                         <div class="carousel-item <?= ($k == 0) ? 'active' : '' ?>">
-                            <img class="d-block w-100 banner" src="<?= base_url(BANNER_PATH . $b->img) ?>" >
+                            <img class="d-block w-100 banner" src="<?= $b->img ?>" >
                         </div>
                     <?php endforeach; ?>
                 </div>
