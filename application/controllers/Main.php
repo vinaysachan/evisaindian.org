@@ -384,9 +384,7 @@ class Main extends FRONT_Controller {
         ];
         $this->load->view('templates/front.tpl', array_merge($this->data, $data));
     }
-    
-    
-    
+     
     public function serach_app() {
         if (!$this->input->post('search') == "") {
             if ($this->input->post('v_code') != $this->session->userdata('captcha')) {
@@ -533,6 +531,19 @@ class Main extends FRONT_Controller {
 //            'meta_description' => $this->meta_description,
 //            'meta_keywords' => $this->meta_keywords,
             'heading' => 'Check Applications Status',
+        ];
+        $this->load->view('templates/front.tpl', array_merge($this->data, $data));
+    }
+        
+    public function free_assessment() {
+        $data                       =   [
+            'title'                     =>  'Free Assessment',
+            'meta_description'          =>  $this->meta_description,
+            'meta_keywords'             =>  $this->meta_keywords,
+            'heading'                   =>  'Free Assessment',
+            'banners'                   =>  $this->setting_model->get_banners_cache(['where' => ['status' => STATUS_ACTIVE]]),
+            'show_application_link'     =>  TRUE,
+            'right_bar'                 =>  TRUE,
         ];
         $this->load->view('templates/front.tpl', array_merge($this->data, $data));
     }

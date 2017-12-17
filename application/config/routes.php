@@ -69,5 +69,5 @@ $route['feepay']                            =   'main/feepay';
 $route['captcha']                           =   'captcha/index';
 $route['app_status']                        =   'main/app_status';
 $route['contact_us']                        =   'main/contact_us';
- 
+$route['free_assessment']                   =   'main/free_assessment';
 $route['(:any)']                            =   'main/page/$1';
