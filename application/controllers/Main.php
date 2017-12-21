@@ -105,7 +105,7 @@ class Main extends FRONT_Controller {
                 $this->ops_email->subject = SITE_NAME . ' - Complete Pending Registration';
                 $this->ops_email->__toEmail = $this->input->post('email');
                 $this->ops_email->__toName = $name;
-//                $this->ops_email->__send_mail();
+                $this->ops_email->__send_mail();
 
                 //Mail To Admin 
                 $adata                  =   [
