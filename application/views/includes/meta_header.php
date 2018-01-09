@@ -30,3 +30,4 @@
 <meta name="msapplication-wide310x150logo" content="<?= base_url('public/img/favicon') ?>/mstile-310x150.png" />
 <meta name="msapplication-square310x310logo" content="<?= base_url('public/img/favicon') ?>/mstile-310x310.png" />
 <meta name="google-site-verification" content="LnAOa5B1X_1pYwbjmFp1EMkumgda-iL023_xPh8Ookw" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
