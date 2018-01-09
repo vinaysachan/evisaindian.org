@@ -29,21 +29,21 @@
 <?php if (!empty($show_application_link)) : ?>
     <div id="application_btn" class="container text-center">
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="info-box bg-orange">
                     <a href="<?= base_url('apply_visa') ?>">
                         <div>Click Here Apply <br/>for Visa</div>
                     </a>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="info-box bg-green">
                     <a href="<?= base_url('serach_app') ?>">
                         <div>Complete Partially<br/>Filled Form</div>
                     </a>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="info-box bg-red">
                     <a href="<?= base_url('serach_app') ?>">
                         <div>Make Payment For<br/>Completed Form</div>

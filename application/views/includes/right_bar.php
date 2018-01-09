@@ -1,5 +1,5 @@
 
-<div class="col-3">
+<div class="col-md-3">
     <?php
     $this->load->view('includes/contacts_link');
 
