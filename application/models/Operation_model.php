@@ -253,7 +253,7 @@ class Operation_model extends CORE_Model {
             'durationofvisa' => $this->input->post('visa_day'),
             'no_of_entries' => $this->input->post('entries_no'),
             'app_type' => $this->input->post('app_type'),
-            'dateofjourney' => get_date($this->input->post('dateofjourney')),
+            'expected_date_arrival' => get_date($this->input->post('expected_date_arrival')),
             'port_of_exit' => $this->input->post('port_of_exit'),
             'places_likely_to_visit' => $this->input->post('visitedplace'),
             'visited_India' => $visitedbefore,

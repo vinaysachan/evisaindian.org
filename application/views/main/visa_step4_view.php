@@ -39,7 +39,7 @@
         <div class="form-group row">
             <label for="dtp_input2" class="col-sm-4 require">Expected Date journey</label>
             <div class="col-sm-6">
-                <input type="text" required="" data-min_date="<?= date('Y,m,d', strtotime("+1 day")) ?>" class="form-control date_picker" name="dateofjourney" id="dob" placeholder="Expected Date journey" value="<?= get_date($apply_details[0]->dateofjourney, 'Y-m-d', 'd/m/Y') ?>" >
+                <input type="text" required="" data-min_date="<?= date('Y,m,d', strtotime("+1 day")) ?>" class="form-control date_picker" name="expected_date_arrival" id="dob" placeholder="Expected Date journey" value="<?= get_date($apply_details[0]->expected_date_arrival, 'Y-m-d', 'd/m/Y') ?>" >
             </div>
         </div>
         <div class="form-group row">
